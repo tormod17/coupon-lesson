@@ -1,0 +1,9 @@
+[{
+    "Question": "What function is used to scrap the DOM from the HTML element",
+    "Answers":  {
+      "A": "InnerText",
+      "B": "innerHTML",
+      "C": "textContent"
+    },
+    "Correct Answer": -2
+}]
