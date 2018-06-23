@@ -21,7 +21,8 @@ class Slide3 extends React.Component<Slide3Prop, Slide3State> {
   public render() {
      return (
        <div>
-         Hello Slide 3, Introduction to HTML and Javascript.
+         <p>Learn how to use Regex 101</p>
+         <iframe width="100%" height="100vh" src="https://regex101.com/"/>
        </div>
      );   
   }

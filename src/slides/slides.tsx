@@ -3,7 +3,7 @@ import * as React from 'react';
 import Slide1 from './slide1';
 import Slide2 from './slide2';
 import Slide3 from './slide3';
-
+import Slide4 from './slide4';
 
 export interface SlidesState {
     selected: number;
@@ -20,14 +20,15 @@ class Slides extends React.Component<SlidesProp, SlidesState> {
   public constructor(props: SlidesProp) {
     super(props);
     this.state ={
-      selected: 0,
+      selected: 3,
     };
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
     this.slideElements = [ 
        <Slide1 show={true} key={1}/>,
        <Slide2 show={true} key={2}/>,
-       <Slide3 show={true} key={3}/>
+       <Slide3 show={true} key={3}/>,
+       <Slide4 show={true} key={4}/>
      ];
   }
 
