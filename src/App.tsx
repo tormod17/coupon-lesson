@@ -1,6 +1,5 @@
 import * as React from 'react';
-import './App.css';
-// import Data from './assets/questions.json';
+import './App.sass';
 import Slides from './slides/slides';
 
 
