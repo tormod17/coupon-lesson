@@ -2,7 +2,6 @@
 import * as React from 'react';
 
 export interface Slide3State {
-  currencySelector: string;  
   selected?: number;
 }
 
@@ -16,14 +15,12 @@ class Slide3 extends React.Component<Slide3Prop, Slide3State> {
   public constructor(props: Slide3Prop) {
     super(props);
     this.state ={
-      currencySelector: '',
       selected: 1,
     };
-    this.updateValue = this.updateValue.bind(this);
+    // this.updateValue = this.updateValue.bind(this);
   }
 
   public render() {
-    const { currencySelector } = this.state;
      return (
        <div className="card pSelectors">
          <h1 className="title is-1">CSS Selectors, Let's see some cool ones</h1>
@@ -91,36 +88,30 @@ class Slide3 extends React.Component<Slide3Prop, Slide3State> {
                <p>// selects all elements with an href attribute that contains "javascript"</p>
                <p>document.querySelectorAll('form > [style*="display: none;"]')[0].style.display = 'block';</p>
                <p>// selects the form element and the first decendent div with an attribute style of display none"</p>
-               <p>document.querySelectorAll('div.current + ul')[0].style.background = 'green';</p>
-               <p>// Selects the ul element immediately after the div with a class current</p>
              </code>
            </li>
           <li className="title is-4">Open your console and copy and paste the above to color the page.</li>
            <li className="title is-4">
             <p>Whats the selector you need to get the selected currency code?</p>
-            <input 
-              onChange={this.updateValue}
-              value={currencySelector}
-            />
           </li>
            <li className="title is-4">
              <p>What's the selector you would use to get the page type for the <a href="https://www.thegoodguys.com.au/fisher-and-paykel-8kg-condenser-dryer-de8060p2?rrec=true">the good guys</a></p>
-             <input />
           </li>
          </ul>
        </div>
      );   
   }
  
-  private updateValue(e: React.FormEvent<HTMLInputElement>): void {
-    const val = e.currentTarget.value
-    if (val === '[data-attr= selected]') {
-      alert('correct');
-    }
-    this.setState({
-      currencySelector: val,
-    });
-  }
+  // private updateValue(e: React.FormEvent<HTMLInputElement>): void {
+  //   const val = e.currentTarget.value;
+  //   console.log(val)
+  //   if (val === '[data-attr= selected]') {
+  //     alert('correct');
+  //   }
+  //   this.setState({
+  //     currencySelector: val,
+  //   });
+  // }
 }
 
 export default Slide3;

@@ -60,7 +60,7 @@
   "CorrectAnswer": "C"
 },
 {
-  "Question": "The CSS selector will regex pattern will match which string. /.{15}/",
+  "Question": "Which string will this regex pattern match.    /.{14}/",
   "Answers": {
     "A": "my str",
     "B": "my long string",
@@ -70,17 +70,17 @@
   "CorrectAnswer": "B"
 },
 {
-  "Question": "The CSS selector will regex pattern will match which string. /.{0,100}/",
+  "Question": "Which pattern will this pattern fully match.    /.{4,8}/",
   "Answers": {
-    "A": "USA dollars",
+    "A": "usa dollars",
     "B": "USA",
-    "C": "both of the above"
+    "C": "£GBP"
   },
   "selector": "q1",
   "CorrectAnswer": "C"
 },
 {
-  "Question": "The CSS selector will match which string. /aab+c*/",
+  "Question": "The regex pattern will match which string.   /aab+c*/",
   "Answers": {
     "A": "aabc",
     "B": "aab",
@@ -90,7 +90,7 @@
   "CorrectAnswer": "C"
 },
 {
-  "Question": "The CSS selector will match which string. /aab+c+/",
+  "Question": "The regex pattern will match which string.    /aab+c+/",
   "Answers": {
     "A": "aabc",
     "B": "aab",
@@ -108,6 +108,16 @@
   },
   "selector": "q1",
   "CorrectAnswer": "C"
+},
+{
+  "Question": "What is the character limit YCP will scrap",
+  "Answers": {
+      "A": "100",
+      "B": "256",
+      "C": "50"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "B"
 }
 
 

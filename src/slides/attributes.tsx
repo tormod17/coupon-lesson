@@ -28,22 +28,16 @@ class Attr extends React.Component<AttrProp, AttrState> {
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR6CZHfNqoEE7_gIMqHVESDH-ZMEDaXmJqo6u_fwtReN-sBsP9" />
                     </li>
                     <li className="title is-4">how can we use this for mapping.</li>
-                    <li className="team">
-                        <img src="https://files.slack.com/files-pri/T02B49BP2-FBEUN1D37/image_from_ios.jpg" />
-                        <img src="https://files.slack.com/files-pri/T02B49BP2-FBE8EAD25/image_from_ios.jpg" />
-                        <img src="https://files.slack.com/files-pri/T02B49BP2-FBE408XJL/image_from_ios.jpg" />
-                  
+                    <li className="ycp-image">
+                        <img src="./img/ycp-att.png" />
                     </li>
                     <li >
                         <code>
                             document.querySelectorAll('[src*="src"]')[0].getAttribute("src");
                         </code>
                     </li>
-                    <li className="ycp-image">
-                        <img src="https://files.slack.com/files-pri/T02B49BP2-FBENPFQ6Q/ycp-att.png" alt="" />
-                    </li>
                     <li className="title is-4">lets see how we can use them [attribute=something]</li>
-                    <li className="title is-4">Open your console select all the team images sources from this page.</li>
+                    <li className="title is-4">Open your console select only the ycp image source from this page.</li>
                 </ul>
             </div>
         );

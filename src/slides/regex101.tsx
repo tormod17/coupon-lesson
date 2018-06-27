@@ -32,9 +32,8 @@ class Slide4 extends React.Component<Slide4Prop, Slide4State> {
     this.instruction = [
       ['Login through google and select javascript as your flavour',  'We can see a breakdown of what the regex is matching', 'Quick Reference', 'save regex for later'],
       ['Lets look at quantifiers, {0,250}, {250}, +,  *, ?', '{0,250} a range of 0 to 250', '{250} matches exactly 250 characters', '+ one or more', '* zero or more', '? zero or one' ],
-      ['Map the addidas product pages we only want shoes', 'Grab a sample of different urls from the site to test your regex (could use Looker for this)'],
       ['Negative/ Positive Look ahead. (?!.+-) OR (?=.+-)', '(?!.+-) forget all characters before "-" match all after.' , 'Test string aabbcc-aabbcc-aabbcc'],
-      ['Map product page for the good guys site.']
+      ['Map the addidas product pages we only want shoes', 'Grab a sample of different urls from the site to test your regex (could use Looker for this)'],
      ]
   }
 
@@ -55,9 +54,16 @@ class Slide4 extends React.Component<Slide4Prop, Slide4State> {
               <h1 className="subtitle is-5 instruct">Regex 101</h1>
               <ul>
               { this.instruction[selected].map(inst =>
-                 <li key={inst}><p className="instruct">{inst}</p></li>
+                 <li key={inst}>
+                   <p className="instruct">{inst}</p>
+                 </li>
                 )
               }
+              { selected === 3  &&
+              <li>
+                 <p className="instruct" ><a href="https://www.adidas.co.uk/ultraboost">Addias UK</a></p>
+               </li>
+               }
               </ul>
             </div>
             { selected < this.instruction.length -1 &&

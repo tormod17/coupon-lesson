@@ -24,9 +24,9 @@ class Slide2 extends React.Component<Slide2Prop, Slide2State> {
          <h1 className="title is-1">CSS Selectors and Regex?</h1>
          <div className="content">
           <ul className="list">
-            <li className="title is-4">Select an element from a clients website, we use CSS Selectors</li>
+            <li className="title is-4">To select an element from a clients website, we use CSS Selectors</li>
             <li className="title is-4">We always want to return just one element</li>
-            <li className="title is-4">Identify the user is on a URL, we use Regex</li>
+            <li className="title is-4">Identify the user is on a particular URL, we use Regex</li>
             <li className="title is-4">Get a string from an element, we use Regex</li>
           </ul>
         </div>
