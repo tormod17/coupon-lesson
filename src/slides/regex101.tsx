@@ -20,7 +20,7 @@ export interface Slide4Prop {
 
 class Slide4 extends React.Component<Slide4Prop, Slide4State> {
   
-  private instruction: string[]; 
+  private instruction: string[][]; 
 
   public constructor(props: Slide4Prop) {
     super(props);
@@ -30,11 +30,11 @@ class Slide4 extends React.Component<Slide4Prop, Slide4State> {
     this.next= this.next.bind(this);
     this.previous= this.previous.bind(this);
     this.instruction = [
-      'Login through google and select javascript as your flavour',
-      'Lets look at quantifiers, {0,250}, {250}, +,  *, ?',
-      'Map the addidas product pages we only want shoes',
-      'Negative/ Positive Look ahead. (?!.+-) OR (?=.+-) forget all characters before "-" match all after. Test string aabbcc-aabbcc-aabbcc',
-      'Map product page for the good guys site.'
+      ['Login through google and select javascript as your flavour',  'We can see a breakdown of what the regex is matching', 'Quick Reference', 'save regex for later'],
+      ['Lets look at quantifiers, {0,250}, {250}, +,  *, ?', '{0,250} a range of 0 to 250', '{250} matches exactly 250 characters', '+ one or more', '* zero or more', '? zero or one' ],
+      ['Map the addidas product pages we only want shoes', 'Grab a sample of different urls from the site to test your regex (could use Looker for this)'],
+      ['Negative/ Positive Look ahead. (?!.+-) OR (?=.+-)', '(?!.+-) forget all characters before "-" match all after.' , 'Test string aabbcc-aabbcc-aabbcc'],
+      ['Map product page for the good guys site.']
      ]
   }
 
@@ -49,14 +49,19 @@ class Slide4 extends React.Component<Slide4Prop, Slide4State> {
   public render() {
     const { selected } = this.state;
      return (
-       <div className="">
+       <div className="regex101">
          <div className="columns">
-            <div className="column is-three-quarters">
-              <p>{this.instruction[selected]}</p>
+            <div className="column is-three-quarters content">
+              <h1 className="subtitle is-5 instruct">Regex 101</h1>
+              <ul>
+              { this.instruction[selected].map(inst =>
+                 <li key={inst}><p className="instruct">{inst}</p></li>
+                )
+              }
+              </ul>
             </div>
             { selected < this.instruction.length -1 &&
               <div className="column">
-        
                   <button
                     className="button"
                     onClick={this.previous}

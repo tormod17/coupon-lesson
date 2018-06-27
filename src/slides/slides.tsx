@@ -3,11 +3,13 @@ import * as React from 'react';
 import Data from '../data.json';
 
 import Questions from '../quiz/question';
-import Slide1 from './slide1';
-import Slide2 from './slide2';
-import Slide3 from './slide3';
-import Slide4 from './slide4';
-import Slide5 from './slide5';
+import Attributes from './attributes';
+import Coupons from './coupons';
+import CssSelectors from './cssSelectors';
+import Intro from './intro';
+import PSelectors from './practiceSelectors';
+import Regex101 from './regex101';
+import TextContent from './textContent';
 
 export interface SlidesState {
     selected: number;
@@ -24,17 +26,19 @@ class Slides extends React.Component<SlidesProp, SlidesState> {
   public constructor(props: SlidesProp) {
     super(props);
     this.state ={
-      selected: 2,
+      selected: 0,
     };
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
     this.slideElements = [ 
-       <Slide1 show={true} key={1}/>,
-       <Slide2 show={true} key={2}/>,
-       <Slide3 show={true} key={3}/>,
-       <Slide4 show={true} key={4}/>,
-       <Slide5 show={true} key={5}/>,
-       <Questions questions={Data} key={6}/>
+       <Intro show={true} key={1}/>,
+       <CssSelectors show={true} key={2}/>,
+       <TextContent show={true} key={3}/>,
+       <Attributes show={true} key={5}/>,
+       <PSelectors show={true} key={6}/>,
+       <Regex101 show={true} key={7}/>,
+       <Coupons show={true} key={8} />,
+       <Questions questions={Data} key={9}/>
      ];
   }
   public render() {
@@ -43,12 +47,13 @@ class Slides extends React.Component<SlidesProp, SlidesState> {
      return (
        <div className="slides">
          <div className="level slides">
-           <div className="level-item">
+           <div className="level-item level-right">
              <button className="button " onClick={this.previous}>
-               Previous
+               Previous Slide
              </button>
+
               <button className="button is-primary is-outlined" onClick={this.next}>
-               Next
+               Next Slide
              </button>
            </div>
          </div>

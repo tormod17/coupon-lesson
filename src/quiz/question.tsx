@@ -7,6 +7,8 @@ export interface QuestionProp {
 }
 
 export interface QuestionState {
+  lastQ: boolean;
+  userAnswers: string[];
   selected: number;
 }
 
@@ -15,68 +17,135 @@ class Question extends React.Component<QuestionProp, QuestionState> {
   public constructor(props: QuestionProp) {
     super(props);
     this.state = {
-      selected: 0
+      lastQ: false,
+      selected: 0,
+      userAnswers: []
     };
     this.next= this.next.bind(this);
     this.previous= this.previous.bind(this);
   }
 
+  public componentDidUpdate(){
+    const elem = document.querySelector('input:checked');
+    if (elem instanceof HTMLInputElement) {
+      elem.checked = false ;
+    } 
+    const checkEls = document.querySelectorAll('.fa.fa-check');
+    const score = document.querySelector('#score'); 
+    if(checkEls.length > 0 && score instanceof HTMLElement) {
+      score.innerHTML = `Score: ${checkEls.length} / ${this.state.userAnswers.length}`;
+    } 
+  }
+  
   public render() {
-     const { selected } = this.state;
-     return (
-       <div className={`${this.props.questions[selected].selector}`}>
+    const { selected, lastQ, userAnswers } = this.state;
+    return (
+      <div className="quiz card"> 
+        <h1 className="title is-2">Quiz</h1>
+      {!lastQ &&
+      <div className={`${this.props.questions[selected].selector}`}>
          <div>
            <ul>
              <li>
-               <h2>{this.props.questions[selected].Question}</h2>
+                <h1 className="title is-5">{this.props.questions[selected].Question}?</h1>
              </li>
              <li>               
-               <label className="checkbox">
-                 <input type="checkBox"/>
-                 {this.props.questions[selected].Answers.A}
+               <label className="checkbox" >
+                 <input name="A" type="checkBox"/>
+                <span>{this.props.questions[selected].Answers.A}</span>
                </label>
              </li>
              <li>               
                <label className="checkbox">
-                 <input type="checkBox"/>
-                 {this.props.questions[selected].Answers.B}
+                 <input name="B" type="checkBox"/>
+                 <span>{this.props.questions[selected].Answers.B}</span>
                 </label>
              </li>
              <li>               
                <label className="checkbox">
-                 <input type="checkBox"/>
-                 {this.props.questions[selected].Answers.C}
+                 <input name="C" type="checkBox"/>
+                 <span>{this.props.questions[selected].Answers.C}</span>
                </label>
               </li>
            </ul>
          </div>
          <div className="column">
-             <button
-               className="button"
-               onClick={this.previous}
-             >
-              previous
-             </button>
-             <button 
-               className="button is-primary is-outlined"
-               onClick={this.next}
-             >
-               next
-             </button>
+            <div>
+              <button
+                className="button"
+                onClick={this.previous}
+              >
+                go back
+              </button>
+              <button
+                className="button is-primary is-outlined"
+                onClick={this.next}
+              >
+                submit
+              </button>
+            </div>
          </div>
+         </div>
+         }
+         {lastQ &&
+          <div className="">
+            <div className="columns">
+              <div className="column">
+                <ul>
+                  your answer
+                {userAnswers.map((answer, i) =>
+                  <li key={`useranswer${i}`}>{`${i+1}. ${answer}`}</li>
+                )}
+                </ul>
+              </div>
+              <div className="column">
+                <ul>
+                correct answer
+                {this.props.questions.map((question, i) =>
+                  <li key={`correctanswer${i}`}>{question.Answers[question.CorrectAnswer]}</li>
+                )}
+                </ul>
+              </div>
+              <div className="column">
+                <ul >
+                  results
+                  {this.props.questions.map((question, i) =>
+                    <li key={`check${i}`}>
+                      <span className="icon">
+                      { question.CorrectAnswer === userAnswers[i] ?
+                        <i className="fa fa-check"/> :
+                        <i className="fa fa-times"/> 
+                      }
+                      </span>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h2 id="score"/>
+            </div>    
+          </div>
+         }
        </div>
      );   
   }
 
   private next():void {
     const length: number = this.props.questions.length;
-    const { selected } = this.state;
-    if(selected === (length -1)){
-      return;
-    } else {
+    const { selected, userAnswers } = this.state;
+    const elem = document.querySelector('input:checked');
+    if (elem instanceof HTMLInputElement) {
+      const answer  = `${elem.getAttribute('name')}`;
+      userAnswers[selected] = answer;
+      const lastQ = selected === (length - 1)
       this.setState({
-        selected: selected + 1
+        lastQ,
+        selected: selected + (lastQ ? 0 : 1),
+        userAnswers
       });
+    } else {
+      // alert('no answer , please provide an answer');
     }
   }
 

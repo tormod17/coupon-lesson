@@ -6,16 +6,110 @@
       "C": "textContent"
     },
     "selector": "q1",
-    "Correct Answer": "C"
+    "CorrectAnswer": "C"
 },
 {
-    "Question": "Which list is are HTML attributes",
+    "Question": "Which of the following is a list of HTML attributes",
     "Answers":  {
       "A": "src, style, class, href, id, and selected",
       "B": "innerHTML, textContent and innerText",
       "C": "div, span, ul, li, and header"
     },
     "selector": "q1",
-    "Correct Answer":  "A"
+    "CorrectAnswer":  "A"
+},
+{
+  "Question": "Where is the coupon stored in the browser before applying  to the site",
+  "Answers": {
+    "A": "Cookie",
+    "B": "sessionStorage",
+    "C": "localStorage"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "C"
+},
+{
+  "Question": "Where is the coupon stored under YCP",
+  "Answers": {
+    "A": "vc.yieldify.com",
+    "B": "td.yieldify.com",
+    "C": "app.yieldify.com"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "B"
+},
+{
+  "Question": "Which function can be used to decode the stored string",
+  "Answers": {
+    "A": "byob()",
+    "B": "atob()",
+    "C": "btob()"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "B"
 }
+,
+{
+  "Question": "What is the minimum number of coupons need in coupon carrier for YCP to trigger a campaign",
+  "Answers": {
+    "A":"1",
+    "B": "5",
+    "C": "16"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "C"
+},
+{
+  "Question": "The CSS selector will regex pattern will match which string. /.{15}/",
+  "Answers": {
+    "A": "my str",
+    "B": "my long string",
+    "C": "my string"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "B"
+},
+{
+  "Question": "The CSS selector will regex pattern will match which string. /.{0,100}/",
+  "Answers": {
+    "A": "USA dollars",
+    "B": "USA",
+    "C": "both of the above"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "C"
+},
+{
+  "Question": "The CSS selector will match which string. /aab+c*/",
+  "Answers": {
+    "A": "aabc",
+    "B": "aab",
+    "C": "both of the above"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "C"
+},
+{
+  "Question": "The CSS selector will match which string. /aab+c+/",
+  "Answers": {
+    "A": "aabc",
+    "B": "aab",
+    "C": "aacb"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "A"
+},
+{
+  "Question": "What happens to the text after retrieved using textContent",
+  "Answers": {
+      "A": "removes all white space and new lines",
+      "B": "replaces white space and new lines with a space",
+      "C": "replaces extra white space and new lines with a space"
+  },
+  "selector": "q1",
+  "CorrectAnswer": "C"
+}
+
+
+
 ]
