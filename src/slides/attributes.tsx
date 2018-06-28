@@ -37,7 +37,7 @@ class Attr extends React.Component<AttrProp, AttrState> {
                         </code>
                     </li>
                     <li className="title is-4">lets see how we can use them [attribute=something]</li>
-                    <li className="title is-4">Open your console select only the ycp image source from this page.</li>
+                    <li className="title is-4">Open your console can you select the second image form this page.</li>
                 </ul>
             </div>
         );

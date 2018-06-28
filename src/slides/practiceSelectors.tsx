@@ -23,7 +23,7 @@ class Slide3 extends React.Component<Slide3Prop, Slide3State> {
   public render() {
      return (
        <div className="card pSelectors">
-         <h1 className="title is-1">CSS Selectors, Let's see some cool ones</h1>
+         <h1 className="title is-1">CSS Selectors, Let's practice</h1>
          <ul>
           <li>
             <div id="currencies-block-top">
@@ -92,7 +92,7 @@ class Slide3 extends React.Component<Slide3Prop, Slide3State> {
            </li>
           <li className="title is-4">Open your console and copy and paste the above to color the page.</li>
            <li className="title is-4">
-            <p>Whats the selector you need to get the selected currency code?</p>
+            <p>What's the selector you need to get the selected currency code?</p>
           </li>
            <li className="title is-4">
              <p>What's the selector you would use to get the page type for the <a href="https://www.thegoodguys.com.au/fisher-and-paykel-8kg-condenser-dryer-de8060p2?rrec=true">the good guys</a></p>

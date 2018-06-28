@@ -40,9 +40,10 @@ class Question extends React.Component<QuestionProp, QuestionState> {
   public render() {
     const { selected, lastQ, userAnswers } = this.state;
     return (
+     <div>
+     {!lastQ &&
       <div className="quiz card"> 
         <h1 className="title is-2">Quiz</h1>
-      {!lastQ &&
       <div className={`${this.props.questions[selected].selector}`}>
          <div>
            <ul>
@@ -86,48 +87,36 @@ class Question extends React.Component<QuestionProp, QuestionState> {
             </div>
          </div>
          </div>
-         }
-         {lastQ &&
-          <div className="">
-            <div className="columns">
-              <div className="column">
-                <ul>
-                  your answer
-                {userAnswers.map((answer, i) =>
-                  <li key={`useranswer${i}`}>{`${i+1}. ${answer}`}</li>
-                )}
-                </ul>
-              </div>
-              <div className="column">
-                <ul>
-                correct answer
+        </div>
+        }
+        { lastQ &&
+          <div>
+            <div className="lq">
+              <h1 className="title is-2">Quiz</h1>
+              <div className="">
+                <ul className="questions">
                 {this.props.questions.map((question, i) =>
-                  <li key={`correctanswer${i}`}>{question.Answers[question.CorrectAnswer]}</li>
+                  <li className="" key={`questions${i}`}>
+                    <span>{`${i+1}. ${question.Question} ?   `}</span>
+                    <span> -- </span>
+                    <span>{`  ${question.Answers[question.CorrectAnswer]}`}</span>
+                    <span className="icon">
+                    { question.CorrectAnswer === userAnswers[i] ?
+                      <i className="fa fa-check"/> :
+                      <i className="fa fa-times"/> 
+                    }
+                    </span>
+                  </li>
                 )}
-                </ul>
-              </div>
-              <div className="column">
-                <ul >
-                  results
-                  {this.props.questions.map((question, i) =>
-                    <li key={`check${i}`}>
-                      <span className="icon">
-                      { question.CorrectAnswer === userAnswers[i] ?
-                        <i className="fa fa-check"/> :
-                        <i className="fa fa-times"/> 
-                      }
-                      </span>
-                    </li>
-                  )}
                 </ul>
               </div>
             </div>
             <div>
               <h2 id="score"/>
-            </div>    
+            </div>
           </div>
-         }
-       </div>
+         } 
+      </div>    
      );   
   }
 

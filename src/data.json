@@ -70,14 +70,14 @@
   "CorrectAnswer": "B"
 },
 {
-  "Question": "Which pattern will this pattern fully match.    /.{4,8}/",
-  "Answers": {
-    "A": "usa dollars",
-    "B": "USA",
-    "C": "£GBP"
+  "Question": "Which pattern will this pattern fully match.    /\\d{0,4}-\\d{0,2}-\\d{0,2}/",
+  "Answers": {  
+    "A": "https://www.fellows.co.uk/Watches-Watch-Parts/2018-03-26",
+    "B": "https://www.fellows.co.uk/The-Watch-Sale/04-24-2018#low_estimate",
+    "C": "https://www.fellows.co.uk/The-Watch-Sale/24-04-18#low_estimate=&high_estimate"
   },
   "selector": "q1",
-  "CorrectAnswer": "C"
+  "CorrectAnswer": "A"
 },
 {
   "Question": "The regex pattern will match which string.   /aab+c*/",

@@ -26,7 +26,7 @@ class Slides extends React.Component<SlidesProp, SlidesState> {
   public constructor(props: SlidesProp) {
     super(props);
     this.state ={
-      selected: 6,
+      selected: 0,
     };
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
