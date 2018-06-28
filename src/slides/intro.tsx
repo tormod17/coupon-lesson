@@ -29,7 +29,7 @@ class Intro extends React.Component<Slide1Prop, Slide1State> {
             <li><p className="title is-4">Some cool CSS selectors </p></li>
             <li><p className="title is-4">Lets look at some cool Regex</p></li>
             <li><p className="title is-4">Lets use Regex 101</p></li>
-            <li><p className="title is-4">Lets look coupon campaings</p></li>
+            <li><p className="title is-4">Lets look at a coupon campaign</p></li>
             <li><p className="title is-4">Multi Choice quiz</p></li>
             <li><p className="title is-4">Let's fix the coupon problem</p></li> 
           </ul>

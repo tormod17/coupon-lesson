@@ -27,7 +27,7 @@ class Attr extends React.Component<AttrProp, AttrState> {
                     <li>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR6CZHfNqoEE7_gIMqHVESDH-ZMEDaXmJqo6u_fwtReN-sBsP9" />
                     </li>
-                    <li className="title is-4">how can we use this for mapping.</li>
+                    <li className="title is-4">How can we use this for mapping?</li>
                     <li className="ycp-image">
                         <img src="./img/ycp-att.png" />
                     </li>
@@ -36,7 +36,7 @@ class Attr extends React.Component<AttrProp, AttrState> {
                             document.querySelectorAll('[src*="src"]')[0].getAttribute("src");
                         </code>
                     </li>
-                    <li className="title is-4">lets see how we can use them [attribute=something]</li>
+                    <li className="title is-4">Lets see how we can use them [attribute=something]</li>
                     <li className="title is-4">Open your console can you select the second image form this page.</li>
                 </ul>
             </div>
